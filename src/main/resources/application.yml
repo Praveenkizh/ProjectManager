@@ -1,0 +1,29 @@
+spring:
+   profiles: default
+   datasource:
+      url: jdbc:mysql://localhost:3306/project_tracker?useSSL=false
+      username: root
+      password: pass@word1
+   jpa:
+      properties:
+         show_sql: true
+         format_sql: true
+   main:
+      allow-bean-definition-overriding: true
+      
+server:
+   port: 8090
+   
+---
+spring:
+   profiles: test
+   datasource:
+      url: jdbc:mysql://localhost:3306/project_tracker?useSSL=false
+      username: root
+      password: pass@word1
+   jpa:
+      properties:
+         show_sql: true
+         format_sql: true
+   main:
+      allow-bean-definition-overriding: true
