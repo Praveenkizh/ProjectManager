@@ -44,7 +44,7 @@ public class TaskService {
 	}
 	
 	
-	public Task updateTask(Long taskId, Task updatedTask ){
+	public Task updateTask(Task updatedTask ){
 		return taskRepository.save(updatedTask);
 		
 	}

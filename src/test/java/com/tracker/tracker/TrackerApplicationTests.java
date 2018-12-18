@@ -53,6 +53,39 @@ public class TrackerApplicationTests {
 		Assert.assertEquals(1L, tasks.size());
 	}
 	
+	@Test
+	public void createTask() {
+		Task task = new Task();
+		//task.setTaskId(1L);
+		task.setTask("Test");
+		task.setStatus("Active");
+		task.setStartDate(new Date(12/15/2018));
+		task.setEndDate(new Date(12/14/2019));
+		task.setPriority(1L);
+		task.setParentId(1L);
+	
+		taskService = new TaskService(taskRepository);
+		Task returnTask = taskService.createTask(task);
+		Assert.assertEquals(returnTask.getTask(), task.getTask());
+	}
+	
+	@Test
+	public void updateTask() {
+		Task task = new Task();
+		//task.setTaskId(1L);
+		task.setTask("Test1");
+		task.setStatus("Active");
+		task.setStartDate(new Date(12/15/2018));
+		task.setEndDate(new Date(12/14/2019));
+		task.setPriority(1L);
+		task.setParentId(1L);
+		Task returnTask = entityManager.persist(task);
+		returnTask.setTask("Task");
+		
+		taskService = new TaskService(taskRepository);
+		Task updatedTask = taskService.updateTask(returnTask);
+		Assert.assertEquals("Task", updatedTask.getTask());
+	}
 	
 
 }
