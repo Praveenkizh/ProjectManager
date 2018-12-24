@@ -4,6 +4,9 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 @Entity
 @Table(name="task")
 public class Task implements Serializable {
@@ -13,8 +16,12 @@ public class Task implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long taskId;
     
-    @Column(name="parent_id")
-    private Long parentId;
+//    @Column(name="parent_id")
+//    private Long parentId;
+    
+    @ManyToOne (cascade=CascadeType.MERGE)
+    @JoinColumn(name="parent_id")
+    private ParentTask parentTask;
     
     @Column(name="project_id")
     private Long projectId;
@@ -44,13 +51,13 @@ public class Task implements Serializable {
 		this.taskId = taskId;
 	}
 
-	public Long getParentId() {
-		return parentId;
-	}
-
-	public void setParentId(Long parentId) {
-		this.parentId = parentId;
-	}
+//	public Long getParentId() {
+//		return parentId;
+//	}
+//
+//	public void setParentId(Long parentId) {
+//		this.parentId = parentId;
+//	}
 
 	public Long getProjectId() {
 		return projectId;
@@ -98,6 +105,14 @@ public class Task implements Serializable {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public ParentTask getParentTask() {
+		return parentTask;
+	}
+
+	public void setParentTask(ParentTask parentTask) {
+		this.parentTask = parentTask;
 	}
 	
 	

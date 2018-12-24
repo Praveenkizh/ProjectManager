@@ -14,8 +14,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class TaskService {
 	
 	TaskRepository taskRepository;
-	public TaskService (TaskRepository taskRepository) {
+	ParentTaskRepository parentTaskRepository;
+	
+	public TaskService (TaskRepository taskRepository, ParentTaskRepository parentTaskRepository) {
 		this.taskRepository = taskRepository;
+		this.parentTaskRepository = parentTaskRepository;
 	}
 	
 		
@@ -31,7 +34,11 @@ public class TaskService {
 	
 	
 	@Transactional
-	public Task createTask(Task task) {		
+	public Task createTask(Task task) {	
+			ParentTask parentTask = parentTaskRepository.getOne(task.getParentTask().getParentId());
+			task.setParentTask(parentTask);
+			//task.setProjectId(1L);
+			task.setStatus("Active");
 			return taskRepository.save(task);
 	
 	}
