@@ -1,5 +1,7 @@
 package com.tracker.tracker;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -12,5 +14,9 @@ public class ProjectService {
 	
 	public Project createProject(Project project) {
 		return this.projectRepository.save(project);
+	}
+	
+	public List<Project> getAllProjects(){
+		return projectRepository.findAll();
 	}
 }
