@@ -1,5 +1,7 @@
 package com.tracker.tracker;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,4 +20,7 @@ public class UserService {
 		return this.userRepository.save(user);
 	}
 	
+	public List<User> getAllUsers(){
+		return this.userRepository.findAll();
+	}
 }

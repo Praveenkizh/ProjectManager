@@ -33,6 +33,9 @@ public class Project {
 	
 	@Column(name="priority")
 	private Long priority;
+	
+	@Column(name="manager_id")
+	private Long managerId;
 
 	public Long getProjectId() {
 		return projectId;
@@ -72,6 +75,14 @@ public class Project {
 
 	public void setPriority(Long priority) {
 		this.priority = priority;
+	}
+
+	public Long getManagerId() {
+		return managerId;
+	}
+
+	public void setManagerId(Long managerId) {
+		this.managerId = managerId;
 	}
 
 }
