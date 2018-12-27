@@ -1,8 +1,5 @@
 package com.tracker.tracker;
 
-import java.util.Date;
-
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -11,7 +8,6 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import junit.framework.Assert;
 
 @WebAppConfiguration
 @RunWith(SpringRunner.class)
@@ -26,8 +22,8 @@ public class ProjectServiceTest {
 	
 	private ProjectService projectService;
 	
-	@Test
-	public void createTask() {
+	//@Test
+	/*public void createTask() {
 		Project project = new Project();
 		//task.setTaskId(1L);
 		project.setProject("Project 1");
@@ -40,6 +36,6 @@ public class ProjectServiceTest {
 		projectService = new ProjectService(projectRepository);
 		Project returnProject = projectService.createProject(project);
 		Assert.assertEquals("Project 1", returnProject.getProject());
-	}
+	}*/
 
 }

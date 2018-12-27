@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="project")
@@ -36,6 +37,25 @@ public class Project {
 	
 	@Column(name="manager_id")
 	private Long managerId;
+	
+	@Transient
+	Long totalTasks;
+	@Transient
+	Long completedTasks;
+	
+	public Long getTotalTasks() {
+		return totalTasks;
+	}
+	public void setTotalTasks(Long totalTasks) {
+		this.totalTasks = totalTasks;
+	}
+	public Long getCompletedTasks() {
+		return completedTasks;
+	}
+	public void setCompletedTasks(Long completedTasks) {
+		this.completedTasks = completedTasks;
+	}
+	
 
 	public Long getProjectId() {
 		return projectId;

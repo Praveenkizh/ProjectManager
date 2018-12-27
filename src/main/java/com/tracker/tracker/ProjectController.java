@@ -33,7 +33,7 @@ public class ProjectController {
 	@GetMapping("/list")
 	@CrossOrigin(origins = "http://localhost:4200")
 	public List<Project> getAllProjects(){
-		return projectService.getAllProjects();
+		return projectService.getAllProjectsWithTaskStatus();
 	}
 }
 

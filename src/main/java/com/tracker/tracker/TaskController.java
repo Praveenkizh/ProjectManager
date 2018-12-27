@@ -3,6 +3,7 @@ package com.tracker.tracker;
 import java.util.List;
 
 import javax.transaction.Transactional;
+import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -26,7 +27,8 @@ public class TaskController {
 	public List<Task> getAllTasks(){
 		return taskService.getAllTasks();
 	}
-
+	
+	
 	@GetMapping("/tasksgroup")
 	@CrossOrigin(origins = "http://localhost:4200")
 	public Page<Task> getAllTasksPage(@RequestParam(defaultValue="0") int page){

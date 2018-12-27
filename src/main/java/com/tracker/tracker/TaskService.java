@@ -27,6 +27,11 @@ public class TaskService {
 		return taskRepository.findAll();
 	}
 	
+	public Long getAllProjectTasks(Long projectId){
+		List<Task> taskList = taskRepository.findAllByProjectIdIn(projectId);
+		return new Long(taskList.size());
+	}
+	
 	
 	public Page<Task> getAllTasksPage(int page){
 		return taskRepository.findAll(new PageRequest(page, 4));
