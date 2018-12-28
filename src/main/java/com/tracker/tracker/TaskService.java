@@ -38,12 +38,14 @@ public class TaskService {
 	}
 	
 	
+	
+	
 	@Transactional
 	public Task createTask(Task task) {	
 			ParentTask parentTask = parentTaskRepository.getOne(task.getParentTask().getParentId());
 			task.setParentTask(parentTask);
 			//task.setProjectId(1L);
-			task.setStatus("Active");
+			//task.setStatus("Active");
 			return taskRepository.save(task);
 	
 	}

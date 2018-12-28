@@ -47,7 +47,7 @@ public class TrackerApplicationTests {
 		parentTask.setParentTask("Parent");
 		parentTask = entityManager.persist(parentTask);
 		task.setTask("Test");
-		task.setStatus("Active");
+		task.setActive(true);
 		task.setStartDate(new Date(12/15/2018));
 		task.setEndDate(new Date(12/14/2019));
 		task.setPriority(1L);
@@ -66,7 +66,7 @@ public class TrackerApplicationTests {
 		Task task = new Task();
 		//task.setTaskId(1L);
 		task.setTask("Test");
-		task.setStatus("Active");
+		task.setActive(true);
 		task.setStartDate(new Date(12/15/2018));
 		task.setEndDate(new Date(12/14/2019));
 		task.setPriority(1L);
@@ -85,7 +85,7 @@ public class TrackerApplicationTests {
 		Task task = new Task();
 		//task.setTaskId(1L);
 		task.setTask("Test1");
-		task.setStatus("Active");
+		task.setActive(true);
 		task.setStartDate(new Date(12/15/2018));
 		task.setEndDate(new Date(12/14/2019));
 		task.setPriority(1L);

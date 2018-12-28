@@ -40,9 +40,9 @@ public class Task implements Serializable {
 	 @Column(name="priority")
 	private Long priority;
 	 
-	@Column(name="status")
-	private String status;
-
+	@Column(name="active")
+	private Boolean active;
+	
 	public Long getTaskId() {
 		return taskId;
 	}
@@ -99,12 +99,12 @@ public class Task implements Serializable {
 		this.priority = priority;
 	}
 
-	public String getStatus() {
-		return status;
+	public Boolean getActive() {
+		return active;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setActive(Boolean active) {
+		this.active = active;
 	}
 
 	public ParentTask getParentTask() {
@@ -114,6 +114,8 @@ public class Task implements Serializable {
 	public void setParentTask(ParentTask parentTask) {
 		this.parentTask = parentTask;
 	}
+
+	
 	
 	
 	
