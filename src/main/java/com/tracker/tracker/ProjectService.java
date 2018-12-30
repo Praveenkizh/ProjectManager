@@ -28,6 +28,8 @@ public class ProjectService {
 		for (Project project : projectList) {
 			Long totalTasks = this.taskService.getAllProjectTasks(project.getProjectId());
 			project.setTotalTasks(totalTasks);
+			Long completedTasks = this.taskService.getCompletedTaskStatistics(project.getProjectId());
+			project.setCompletedTasks(completedTasks);
 		}
 		return projectList;
 	}

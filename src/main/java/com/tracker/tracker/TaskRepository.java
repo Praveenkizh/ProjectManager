@@ -11,5 +11,9 @@ import org.springframework.stereotype.Repository;
 public interface TaskRepository extends JpaRepository<Task, Long>{
 
 	public List<Task> findAllByProjectIdIn(Long projectId);
+	
+	public Long countAllByProjectIdInAndActiveIn(Long projectId, boolean active);
+	
+
 
 }

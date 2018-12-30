@@ -57,6 +57,10 @@ public class TaskService {
 		return taskRepository.findById(taskId);
 	}
 	
+	public Long getCompletedTaskStatistics(Long projectId) {
+		return taskRepository.countAllByProjectIdInAndActiveIn(projectId, false);
+	}
+	
 	
 	public Task updateTask(Task updatedTask ){
 		return taskRepository.save(updatedTask);
