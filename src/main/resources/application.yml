@@ -1,9 +1,9 @@
 spring:
    profiles: default
    datasource:
-      url: jdbc:mysql://localhost:3306/project_tracker?useSSL=false
-      username: root
-      password: pass@word1
+      url: jdbc:mysql://mysql-prav:3306/project_tracker?useSSL=false
+      username: remote_user
+      password: tracker
    jpa:
       properties:
          show_sql: true
@@ -18,9 +18,9 @@ server:
 spring:
    profiles: test
    datasource:
-      url: jdbc:mysql://localhost:3306/project_tracker?useSSL=false
-      username: root
-      password: pass@word1
+      url: jdbc:mysql://mysql-prav:3306/project_tracker?useSSL=false
+      username: remote_user
+      password: tracker
    jpa:
       properties:
          show_sql: true
